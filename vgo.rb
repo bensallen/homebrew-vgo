@@ -22,8 +22,6 @@ class Vgo < Formula
     (buildpath/"src/github.com/golang/vgo").install buildpath.children
     
     cd "src/github.com/golang/vgo" do
-      ENV["DEP_BUILD_PLATFORMS"] = "darwin"
-      ENV["DEP_BUILD_ARCHS"] = arch
       system "go build -o vgo"
       bin.install "vgo" => "vgo"
       prefix.install_metafiles
